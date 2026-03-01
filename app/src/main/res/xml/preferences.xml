@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_category_printer">
+
+        <EditTextPreference
+            android:key="printer_email"
+            android:title="@string/pref_printer_email_title"
+            android:summary="@string/pref_printer_email_summary"
+            android:inputType="textEmailAddress"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_email">
+
+        <EditTextPreference
+            android:key="sender_email"
+            android:title="@string/pref_sender_email_title"
+            android:summary="@string/pref_sender_email_summary"
+            android:inputType="textEmailAddress"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            android:key="sender_password"
+            android:title="@string/pref_sender_password_title"
+            android:summary="@string/pref_sender_password_summary"
+            android:inputType="textPassword" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_smtp">
+
+        <EditTextPreference
+            android:key="smtp_host"
+            android:title="@string/pref_smtp_host_title"
+            android:defaultValue="smtp.gmail.com"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            android:key="smtp_port"
+            android:title="@string/pref_smtp_port_title"
+            android:defaultValue="587"
+            android:inputType="number"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

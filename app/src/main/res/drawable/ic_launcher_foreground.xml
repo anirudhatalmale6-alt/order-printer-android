@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Cart icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33,36h4.2l7.8,16.4L47.4,48c0.6,-1 0.6,-2.2 0.6,-2.2V38h4v8c0,2,-0.8,3.8,-2,5l-3.6,4.2 1,4.8H69v4H45.4c-2.2,0,-4,-1.8,-4,-4l1.4,-6.8L36,38h-3v-4zM47,64c-2.2,0 -4,1.8 -4,4s1.8,4 4,4 4,-1.8 4,-4 -1.8,-4 -4,-4zM63,64c-2.2,0 -4,1.8 -4,4s1.8,4 4,4 4,-1.8 4,-4 -1.8,-4 -4,-4z"/>
+</vector>

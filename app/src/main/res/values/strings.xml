@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Παραγγελίες</string>
+    <string name="send_button">Αποστολή</string>
+    <string name="clear_button">Καθαρισμός</string>
+    <string name="sending">Αποστολή…</string>
+    <string name="settings_title">Ρυθμίσεις</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="send">Αποστολή</string>
+    <string name="success">Επιτυχία</string>
+    <string name="error">Σφάλμα</string>
+
+    <string name="no_products_selected">Δεν έχετε επιλέξει προϊόντα</string>
+    <string name="quantities_cleared">Οι ποσότητες μηδενίστηκαν</string>
+    <string name="order_summary">Σύνοψη Παραγγελίας</string>
+    <string name="order_sent_success">Η παραγγελία στάλθηκε με επιτυχία!</string>
+    <string name="send_failed">Αποτυχία αποστολής</string>
+    <string name="settings_required">Απαιτούνται Ρυθμίσεις</string>
+    <string name="settings_required_message">Παρακαλώ συμπληρώστε τις ρυθμίσεις email πριν την αποστολή.</string>
+    <string name="go_to_settings">Ρυθμίσεις</string>
+
+    <!-- Preferences -->
+    <string name="pref_category_printer">Εκτυπωτής</string>
+    <string name="pref_printer_email_title">Email Εκτυπωτή</string>
+    <string name="pref_printer_email_summary">π.χ. xxxxx@print.epsonconnect.com</string>
+
+    <string name="pref_category_email">Λογαριασμός Email (Αποστολέας)</string>
+    <string name="pref_sender_email_title">Email</string>
+    <string name="pref_sender_email_summary">Email λογαριασμού αποστολής</string>
+    <string name="pref_sender_password_title">Κωδικός / App Password</string>
+    <string name="pref_sender_password_summary">Κωδικός πρόσβασης SMTP</string>
+
+    <string name="pref_category_smtp">Ρυθμίσεις SMTP</string>
+    <string name="pref_smtp_host_title">SMTP Server</string>
+    <string name="pref_smtp_port_title">SMTP Port</string>
+</resources>
