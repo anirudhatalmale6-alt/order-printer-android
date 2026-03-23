@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         // Φόρτωση προϊόντων
         val products = ProductLoader.loadProducts(this)
-        adapter = ProductAdapter(products)
+        adapter = ProductAdapter(products) { updateTotal() }
 
         binding.recyclerProducts.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -51,6 +51,13 @@ class MainActivity : AppCompatActivity() {
             adapter.clearQuantities()
             Snackbar.make(binding.root, getString(R.string.quantities_cleared), Snackbar.LENGTH_SHORT).show()
         }
+
+        updateTotal()
+    }
+
+    private fun updateTotal() {
+        val total = adapter.getTotal()
+        binding.tvTotal.text = String.format("Σύνολο: %.2f €", total)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

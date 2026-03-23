@@ -33,6 +33,21 @@
             android:clipToPadding="false"
             android:paddingBottom="8dp" />
 
+        <!-- Σύνολο -->
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:background="@color/primary"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:text="Σύνολο: 0,00 €"
+            android:elevation="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
