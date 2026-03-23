@@ -19,35 +19,19 @@ object OrderFormatter {
 
         val sb = StringBuilder()
         sb.appendLine("========================================")
-        sb.appendLine("         ΔΕΛΤΙΟ ΠΑΡΑΓΓΕΛΙΑΣ")
+        sb.appendLine("      ΚΟΤΣΑΝΙΔΗΣ CATERING")
+        sb.appendLine("      ΔΕΛΤΙΟ ΠΑΡΑΓΓΕΛΙΑΣ")
         sb.appendLine("========================================")
         sb.appendLine("Ημ/νία: $now")
-        sb.appendLine("----------------------------------------")
-        sb.appendLine(String.format("%-20s %-8s %4s %8s", "ΠΡΟΪΟΝ", "ΚΩΔΙΚΟΣ", "ΠΟΣ.", "ΑΞΙΑ"))
         sb.appendLine("----------------------------------------")
 
         var subtotal = 0.0
         for (product in selectedProducts) {
             val lineTotal = product.price * product.quantity
             subtotal += lineTotal
-            if (product.price > 0) {
-                sb.appendLine(
-                    String.format("%-20s %-8s %4d %8.2f",
-                        product.name.take(20),
-                        product.code.take(8),
-                        product.quantity,
-                        lineTotal
-                    )
-                )
-            } else {
-                sb.appendLine(
-                    String.format("%-20s %-8s %4d",
-                        product.name.take(20),
-                        product.code.take(8),
-                        product.quantity
-                    )
-                )
-            }
+            val unitStr = if (product.unit.isNotBlank()) " (${product.unit})" else ""
+            sb.appendLine("${product.name}$unitStr")
+            sb.appendLine("  ${product.code}  x${product.quantity}  = ${String.format("%.2f", lineTotal)} €")
         }
 
         sb.appendLine("----------------------------------------")

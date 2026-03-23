@@ -20,7 +20,7 @@ class ProductAdapter(
 
         fun bind(product: Product) {
             binding.tvProductName.text = product.name
-            binding.tvProductCode.text = product.code
+            binding.tvProductCode.text = if (product.unit.isNotBlank()) "${product.code} · ${product.unit}" else product.code
             binding.tvQuantity.text = product.quantity.toString()
 
             if (product.price > 0) {
