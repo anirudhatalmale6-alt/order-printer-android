@@ -17,8 +17,20 @@ object ProductLoader {
         val type = object : TypeToken<List<ProductJson>>() {}.type
         val items: List<ProductJson> = Gson().fromJson(json, type)
 
-        return items.map { Product(name = it.name, code = it.code) }.toMutableList()
+        return items.map {
+            Product(
+                name = it.name,
+                code = it.code,
+                unit = it.unit ?: "",
+                price = it.price ?: 0.0
+            )
+        }.toMutableList()
     }
 
-    private data class ProductJson(val name: String, val code: String)
+    private data class ProductJson(
+        val name: String,
+        val code: String,
+        val unit: String? = null,
+        val price: Double? = null
+    )
 }
