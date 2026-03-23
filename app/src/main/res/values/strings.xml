@@ -30,6 +30,12 @@
     <string name="pref_sender_password_title">Κωδικός / App Password</string>
     <string name="pref_sender_password_summary">Κωδικός πρόσβασης SMTP</string>
 
+    <string name="pref_category_order">Παραγγελία</string>
+    <string name="pref_discount_title">Έκπτωση (%)</string>
+    <string name="pref_discount_summary">Ποσοστό έκπτωσης στο σύνολο</string>
+    <string name="pref_vat_title">ΦΠΑ (%)</string>
+    <string name="pref_vat_summary">Ποσοστό ΦΠΑ</string>
+
     <string name="pref_category_smtp">Ρυθμίσεις SMTP</string>
     <string name="pref_smtp_host_title">SMTP Server</string>
     <string name="pref_smtp_port_title">SMTP Port</string>

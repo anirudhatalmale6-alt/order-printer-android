@@ -15,6 +15,7 @@ import com.orderprinter.app.databinding.ActivityMainBinding
 import com.orderprinter.app.util.EmailSender
 import com.orderprinter.app.util.OrderFormatter
 import com.orderprinter.app.util.ProductLoader
+import androidx.preference.PreferenceManager
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -87,8 +88,13 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        // Ανάγνωση ρυθμίσεων έκπτωσης & ΦΠΑ
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val discountPercent = (prefs.getString("discount_percent", "0") ?: "0").toDoubleOrNull() ?: 0.0
+        val vatPercent = (prefs.getString("vat_percent", "0") ?: "0").toDoubleOrNull() ?: 0.0
+
         // Εμφάνιση σύνοψης πριν αποστολή
-        val orderText = OrderFormatter.formatOrder(selected)
+        val orderText = OrderFormatter.formatOrder(selected, discountPercent, vatPercent)
 
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.order_summary))

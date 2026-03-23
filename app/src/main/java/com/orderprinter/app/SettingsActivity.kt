@@ -35,7 +35,7 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.preferences, rootKey)
 
             // Εμφάνιση τιμών στο summary
-            val keys = listOf("printer_email", "sender_email", "smtp_host", "smtp_port")
+            val keys = listOf("printer_email", "sender_email", "smtp_host", "smtp_port", "discount_percent", "vat_percent")
             for (key in keys) {
                 val pref = findPreference<EditTextPreference>(key)
                 pref?.summaryProvider = EditTextPreference.SimpleSummaryProvider.getInstance()

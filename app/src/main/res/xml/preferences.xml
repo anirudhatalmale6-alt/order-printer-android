@@ -30,6 +30,26 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/pref_category_order">
+
+        <EditTextPreference
+            android:key="discount_percent"
+            android:title="@string/pref_discount_title"
+            android:summary="@string/pref_discount_summary"
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            android:key="vat_percent"
+            android:title="@string/pref_vat_title"
+            android:summary="@string/pref_vat_summary"
+            android:defaultValue="0"
+            android:inputType="numberDecimal"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/pref_category_smtp">
 
         <EditTextPreference

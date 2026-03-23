@@ -1,6 +1,7 @@
 package com.orderprinter.app.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.orderprinter.app.databinding.ItemProductBinding
@@ -21,6 +22,13 @@ class ProductAdapter(
             binding.tvProductName.text = product.name
             binding.tvProductCode.text = product.code
             binding.tvQuantity.text = product.quantity.toString()
+
+            if (product.price > 0) {
+                binding.tvProductPrice.text = String.format("%.2f €", product.price)
+                binding.tvProductPrice.visibility = View.VISIBLE
+            } else {
+                binding.tvProductPrice.visibility = View.GONE
+            }
 
             binding.btnMinus.setOnClickListener {
                 if (product.quantity > 0) {
