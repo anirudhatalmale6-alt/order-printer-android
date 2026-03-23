@@ -52,12 +52,35 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(binding.root, getString(R.string.quantities_cleared), Snackbar.LENGTH_SHORT).show()
         }
 
+        applySettings()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        applySettings()
+    }
+
+    private fun applySettings() {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val discountPercent = (prefs.getString("discount_percent", "0") ?: "0").toDoubleOrNull() ?: 0.0
+        adapter.discountPercent = discountPercent
         updateTotal()
     }
 
     private fun updateTotal() {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val vatPercent = (prefs.getString("vat_percent", "0") ?: "0").toDoubleOrNull() ?: 0.0
+        val discountPercent = (prefs.getString("discount_percent", "0") ?: "0").toDoubleOrNull() ?: 0.0
+
         val total = adapter.getTotal()
-        binding.tvTotal.text = String.format("Σύνολο: %.2f €", total)
+        val totalWithVat = total * (1 + vatPercent / 100.0)
+
+        if (discountPercent > 0) {
+            binding.tvTotal.text = String.format("Σύνολο (έκπτ. %.0f%%): %.2f €", discountPercent, total)
+        } else {
+            binding.tvTotal.text = String.format("Σύνολο: %.2f €", total)
+        }
+        binding.tvTotalWithVat.text = String.format("Με ΦΠΑ (%.0f%%): %.2f €", vatPercent, totalWithVat)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
